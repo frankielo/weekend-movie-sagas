@@ -1,19 +1,25 @@
-import {HashRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
 import MovieList from '../MovieList/MovieList'
+import MovieDetail from '../MovieDetail/MovieDetail'
 
 function App() {
   return (
     <div className="App">
       <h1>The Movies Saga!</h1>
-      <Router>        
+      {/* <Router>        
         <Route path="/" exact>
           <MovieList />
-        </Route>
-        
+        </Route> */}
+
         {/* Details page */}
 
         {/* Add Movie page */}
+        <Router>
+          <Routes>
+            <Route path="/" element={<MovieList />}/>
+            <Route path="/details/:id" element={<MovieDetail />}/>
+          </Routes>
       </Router>
     </div>
   );
