@@ -26,6 +26,7 @@ function MovieList() {
                     );
                 })}
             </section>
+            <button onClick={()=>{navigate("/add")}}>Add a movie</button>
         </main>
 
     );
